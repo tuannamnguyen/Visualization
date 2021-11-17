@@ -5,25 +5,20 @@ import java.util.Random;
 import javafx.animation.TranslateTransition;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 public class Element extends Rectangle {
     private int value;
+    private Text textValue;
     public final Color START = Color.AQUAMARINE;
     public final Color SELECTED = Color.GREEN;
     public final Color SORTED = Color.ORANGE;
 
     public Element(int value) {
         this.value = value;
+        this.textValue = new Text(String.valueOf(value));
         this.setFill(START);
-    }
-
-    public int getValue() {
-        return value;
-    }
-
-    public void setValue(int value) {
-        this.value = value;
     }
 
     public TranslateTransition moveAlongXAxis(int x) {
@@ -45,9 +40,13 @@ public class Element extends Rectangle {
         Random ran = new Random();
 
         for (int i = 0; i < Main.NO_OF_ELEMENTS; i++) {
-            Element element = new Element(ran.nextInt(Main.NO_OF_ELEMENTS));
+            Element element = new Element(ran.nextInt(Main.NO_OF_ELEMENTS - 1) + 1);
+
             element.setX(i * (Main.APP_WIDTH / Main.NO_OF_ELEMENTS));
             element.setDimensions(Main.NO_OF_ELEMENTS);
+
+            element.textValue.setX((element.getX() + element.getWidth()) /  2);
+
             elementList.add(element);
         }
 
