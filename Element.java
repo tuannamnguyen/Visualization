@@ -1,3 +1,5 @@
+package Visualization;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -11,9 +13,9 @@ import javafx.util.Duration;
 public class Element extends Rectangle {
     private int value;
     private Text textValue;
-    public final Color START = Color.AQUAMARINE;
-    public final Color SELECTED = Color.GREEN;
-    public final Color SORTED = Color.ORANGE;
+    public static final Color START = Color.AQUAMARINE;
+    public static final Color SELECTED = Color.RED;
+    public static final Color SORTED = Color.YELLOW;
 
     public Element(int value) {
         this.value = value;
@@ -45,11 +47,13 @@ public class Element extends Rectangle {
             element.setX(i * (Main.APP_WIDTH / Main.NO_OF_ELEMENTS));
             element.setDimensions(Main.NO_OF_ELEMENTS);
 
-            element.textValue.setX((element.getX() + element.getWidth()) /  2);
-
             elementList.add(element);
         }
 
         return elementList;
+    }
+
+    public int getValue() {
+        return this.value;
     }
 }
