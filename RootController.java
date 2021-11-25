@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Visualization.Sort.BubbleSort;
+import Visualization.Sort.SelectionSort;
 import Visualization.Sort.Sort;
 import javafx.animation.SequentialTransition;
 import javafx.geometry.Insets;
@@ -39,7 +40,13 @@ public class RootController {
 
             if (selection.equalsIgnoreCase("BUBBLE SORT")) {
                 Sort bubbleSort = new BubbleSort();
+                st.getChildren().clear();
                 st.getChildren().addAll(bubbleSort.sort(list));
+                st.play();
+            } else if (selection.equalsIgnoreCase("SELECTION SORT")) {
+                Sort selectionSort = new SelectionSort();
+                st.getChildren().clear();
+                st.getChildren().addAll(selectionSort.sort(list));
                 st.play();
             }
 
