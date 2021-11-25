@@ -6,8 +6,11 @@ import java.util.List;
 
 import Visualization.Element;
 import Visualization.Main;
+import javafx.animation.FillTransition;
 import javafx.animation.ParallelTransition;
 import javafx.animation.Transition;
+import javafx.scene.paint.Color;
+import javafx.util.Duration;
 
 
 public abstract class Sort {
@@ -28,6 +31,15 @@ public abstract class Sort {
         Collections.swap(list, i, j);
 
         return pt;
+    }
+
+    public FillTransition changeColor(Element e, Color color) {
+        FillTransition ft = new FillTransition();
+        ft.setShape(e);
+        ft.setToValue(color);
+        ft.setDuration(Duration.millis(100));
+
+        return ft;
     }
 
     public abstract List<Transition> sort(List<Element> list);
