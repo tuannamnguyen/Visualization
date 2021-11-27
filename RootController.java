@@ -70,8 +70,7 @@ public class RootController {
         buttonRow.setStyle("-fx-background-color: #336699;");
 
         System.out.println("HBox height: " + buttonRow.getHeight());
-
-        root.setStyle("-fx-background-color: #1c1c1c");
+        
         root.setCenter(center);
         root.setBottom(buttonRow);
     }

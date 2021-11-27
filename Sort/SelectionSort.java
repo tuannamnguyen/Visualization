@@ -14,7 +14,7 @@ public class SelectionSort extends Sort {
     }
 
     private void selectionSort(List<Element> list) {
-        Color minColor = Color.ORANGE;
+        Color minColor = Color.GREEN;
         // TODO: refine color
 
         for (int i = 0; i < list.size() - 1; i++) {

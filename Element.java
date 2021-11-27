@@ -13,9 +13,9 @@ import javafx.util.Duration;
 public class Element extends Rectangle {
     private int value;
     private Text textValue;
-    public static final Color START = Color.AQUAMARINE;
+    public static final Color START = Color.BLUE;
     public static final Color SELECTED = Color.RED;
-    public static final Color SORTED = Color.YELLOW;
+    public static final Color SORTED = Color.ORANGE;
 
     public Element(int value) {
         this.value = value;
