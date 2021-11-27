@@ -14,13 +14,12 @@ public class SelectionSort extends Sort {
     }
 
     private void selectionSort(List<Element> list) {
-        Color min = Color.ORANGE;
-        //TODO: refine color
-        
+        Color minColor = Color.ORANGE;
+        // TODO: refine color
 
         for (int i = 0; i < list.size() - 1; i++) {
             int min_idx = i;
-            this.transitions.add(this.changeColor(list.get(min_idx), min));
+            this.transitions.add(this.changeColor(list.get(i), minColor));
 
             for (int j = i + 1; j < list.size(); j++) {
                 this.transitions.add(this.changeColor(list.get(j), Element.SELECTED));
@@ -28,19 +27,24 @@ public class SelectionSort extends Sort {
                 if (list.get(j).getValue() < list.get(min_idx).getValue()) {
                     ParallelTransition pt = new ParallelTransition();
                     pt.getChildren().add(this.changeColor(list.get(min_idx), Element.START));
-
+                    
                     min_idx = j;
 
-                    pt.getChildren().add(this.changeColor(list.get(min_idx), min));
+                    pt.getChildren().add(this.changeColor(list.get(min_idx), minColor));
+
                     this.transitions.add(pt);
+                    continue;
                 }
 
                 this.transitions.add(this.changeColor(list.get(j), Element.START));
             }
 
             this.transitions.add(this.swap(list, i, min_idx));
-            
+            this.transitions.add(this.changeColor(list.get(i), Element.SORTED));
+
         }
+        
+        this.transitions.add(this.changeColor(list.get(list.size() - 1), Element.SORTED));
     }
 
     @Override
