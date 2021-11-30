@@ -23,6 +23,7 @@ public class InsertionSort extends Sort {
             int j = i - 1;
 
             transitions.add(changeColor(list.get(i), Element.SELECTED));
+            transitions.add(changeColor(list.get(j), Element.SORTED));
 
             transitions.add(key.moveAlongYAxis(Collections.max(list).getValue() + 350));
 
@@ -39,7 +40,7 @@ public class InsertionSort extends Sort {
             transitions.add(key.moveAlongXAxis(xRate * (j + 1 - i)));
             transitions.add(key.moveAlongYAxis(-(Collections.max(list).getValue() + 350)));
             transitions.add(changeColor(key, Element.SORTED));
-            transitions.add(changeColor(list.get(j + 1), Element.START));
+            
         }
 
         for (Element e : list) {
