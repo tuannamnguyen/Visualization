@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Visualization.Sort.BubbleSort;
+import Visualization.Sort.InsertionSort;
 import Visualization.Sort.SelectionSort;
 import Visualization.Sort.Sort;
 import javafx.animation.SequentialTransition;
@@ -48,6 +49,11 @@ public class RootController {
                 st.getChildren().clear();
                 st.getChildren().addAll(selectionSort.sort(list));
                 st.play();
+            } else if (selection.equalsIgnoreCase("INSERTION SORT")) {
+                Sort insertionSort = new InsertionSort();
+                st.getChildren().clear();
+                st.getChildren().addAll(insertionSort.sort(list));
+                st.play();
             }
 
             st.setOnFinished(event -> random.setDisable(false));
@@ -68,8 +74,6 @@ public class RootController {
         buttonRow.getChildren().addAll(sort, random, choiceBox);
         buttonRow.setAlignment(Pos.CENTER);
         buttonRow.setStyle("-fx-background-color: #336699;");
-
-        System.out.println("HBox height: " + buttonRow.getHeight());
         
         root.setCenter(center);
         root.setBottom(buttonRow);

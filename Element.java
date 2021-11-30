@@ -10,7 +10,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
-public class Element extends Rectangle {
+public class Element extends Rectangle implements Comparable<Element> {
     private int value;
     private Text textValue;
     public static final Color START = Color.BLUE;
@@ -32,9 +32,18 @@ public class Element extends Rectangle {
         return transition;
     }
 
+    public TranslateTransition moveAlongYAxis(int y) {
+        TranslateTransition transition = new TranslateTransition();
+        transition.setNode(this);
+        transition.setDuration(Duration.millis(200));
+        transition.setByY(y);
+
+        return transition;
+    }
+
     public void setDimensions(int listLength) {
         this.setWidth(Main.APP_WIDTH / listLength - Main.XGAP);
-        this.setHeight(((Main.APP_HEIGHT - Main.BUTTONROW_BOUNDARY) / listLength) * this.value);
+        this.setHeight(((Main.APP_HEIGHT - Main.BUTTONROW_BOUNDARY - 300) / listLength) * this.value);
     }
 
     public static List<Element> randomize() {
@@ -55,5 +64,14 @@ public class Element extends Rectangle {
 
     public int getValue() {
         return this.value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    @Override
+    public int compareTo(Element other) {
+        return Integer.compare(value, other.value);
     }
 }
