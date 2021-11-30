@@ -35,7 +35,7 @@ public class Element extends Rectangle implements Comparable<Element> {
     public TranslateTransition moveAlongYAxis(int y) {
         TranslateTransition transition = new TranslateTransition();
         transition.setNode(this);
-        transition.setDuration(Duration.millis(100));
+        transition.setDuration(Duration.millis(200));
         transition.setByY(y);
 
         return transition;

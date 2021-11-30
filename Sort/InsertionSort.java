@@ -26,17 +26,16 @@ public class InsertionSort extends Sort {
 
             transitions.add(key.moveAlongYAxis(Collections.max(list).getValue() + 350));
 
-            ParallelTransition st = new ParallelTransition();
+            
 
             while (j >= 0 && key.getValue() < list.get(j).getValue()) {
-                st.getChildren().add(list.get(j).moveAlongXAxis(xRate));
+                transitions.add(list.get(j).moveAlongXAxis(xRate));
                 list.set(j + 1, list.get(j));
                 j--;
             }
 
             list.set(j + 1, key);
 
-            transitions.add(st);
             transitions.add(key.moveAlongXAxis(xRate * (j + 1 - i)));
             transitions.add(key.moveAlongYAxis(-(Collections.max(list).getValue() + 350)));
             transitions.add(changeColor(key, Element.SORTED));
