@@ -5,10 +5,7 @@ import java.util.List;
 
 import Visualization.Element;
 import Visualization.Main;
-import javafx.animation.ParallelTransition;
-import javafx.animation.SequentialTransition;
 import javafx.animation.Transition;
-import javafx.animation.TranslateTransition;
 
 public class InsertionSort extends Sort {
     public InsertionSort() {
@@ -42,11 +39,6 @@ public class InsertionSort extends Sort {
             transitions.add(changeColor(key, Element.SORTED));
             
         }
-
-        for (Element e : list) {
-            transitions.add(changeColor(e, Element.SORTED));
-        }
-
     }
 
     @Override

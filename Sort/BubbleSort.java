@@ -5,7 +5,6 @@ import java.util.List;
 import Visualization.Element;
 import javafx.animation.ParallelTransition;
 import javafx.animation.Transition;
-import javafx.scene.paint.Color;
 
 public class BubbleSort extends Sort {
     public BubbleSort() {

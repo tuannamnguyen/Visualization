@@ -1,6 +1,5 @@
 package Visualization.Sort;
 
-import java.util.Collections;
 import java.util.List;
 
 import Visualization.Element;
@@ -15,7 +14,7 @@ public class SelectionSort extends Sort {
 
     private void selectionSort(List<Element> list) {
         Color minColor = Color.GREEN;
-        // TODO: refine color
+        
 
         for (int i = 0; i < list.size() - 1; i++) {
             int min_idx = i;
