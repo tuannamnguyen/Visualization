@@ -10,11 +10,15 @@ import Visualization.Sort.Sort;
 import javafx.animation.SequentialTransition;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 public class RootController {
     public static void rootController(BorderPane root) {
@@ -30,6 +34,38 @@ public class RootController {
 
         Button sort = new Button("sort");
         Button random = new Button("randomize");
+        Button setNum = new Button("set size");
+
+        setNum.setOnAction(e -> {
+            sort.setDisable(true);
+            random.setDisable(true);
+
+            Stage stage = new Stage();
+            VBox vbox = new VBox();
+
+            TextField input = new TextField();
+            input.setPromptText("size");
+
+            Button add = new Button("add");
+            add.setOnAction(event -> {
+                Main.NO_OF_ELEMENTS = Integer.parseInt(input.getText().trim());
+                list.clear();
+                list.addAll(Element.randomize());
+                center.getChildren().clear();
+                center.getChildren().addAll(list);
+
+                sort.setDisable(false);
+                random.setDisable(false);
+                stage.close();
+            });
+
+            vbox.getChildren().addAll(input, add);
+            Scene scene = new Scene(vbox, 200, 200);
+            stage.setTitle("set size");
+            stage.setScene(scene);
+
+            stage.show();
+        });
 
         sort.setOnAction(e -> {
             sort.setDisable(true);
@@ -60,21 +96,23 @@ public class RootController {
         });
 
         random.setOnAction(e -> {
-            sort.setDisable(false);
+            sort.setDisable(true);
 
             list.clear();
             list.addAll(Element.randomize());
             center.getChildren().clear();
             center.getChildren().addAll(list);
+
+            sort.setDisable(false);
         });
 
         HBox buttonRow = new HBox();
         buttonRow.setPadding(new Insets(15, 12, 15, 12));
         buttonRow.setSpacing(10);
-        buttonRow.getChildren().addAll(sort, random, choiceBox);
+        buttonRow.getChildren().addAll(sort, random, choiceBox, setNum);
         buttonRow.setAlignment(Pos.CENTER);
         buttonRow.setStyle("-fx-background-color: #336699;");
-        
+
         root.setCenter(center);
         root.setBottom(buttonRow);
     }
