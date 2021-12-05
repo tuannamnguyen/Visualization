@@ -15,7 +15,7 @@ public class Element extends StackPane implements Comparable<Element> {
     private int value;
     private Text textValue;
     Rectangle representation = new Rectangle();
-    public static final Color START = Color.BLUE;
+    public static final Color START = Color.LIGHTBLUE;
     public static final Color SELECTED = Color.RED;
     public static final Color SORTED = Color.ORANGE;
 
