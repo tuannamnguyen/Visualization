@@ -35,7 +35,7 @@ public abstract class Sort {
 
     public FillTransition changeColor(Element e, Color color) {
         FillTransition ft = new FillTransition();
-        ft.setShape(e);
+        ft.setShape(e.getRepresentation());
         ft.setToValue(color);
         ft.setDuration(Duration.millis(100));
 
