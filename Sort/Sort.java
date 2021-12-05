@@ -12,7 +12,6 @@ import javafx.animation.Transition;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
-
 public abstract class Sort {
     protected List<Transition> transitions;
 
@@ -26,7 +25,8 @@ public abstract class Sort {
         int xRate = Main.APP_WIDTH / Main.NO_OF_ELEMENTS;
         int numOfElements = j - i;
 
-        pt.getChildren().addAll(list.get(i).moveAlongXAxis(xRate * numOfElements), list.get(j).moveAlongXAxis(-xRate * numOfElements));
+        pt.getChildren().addAll(list.get(i).moveAlongXAxis(xRate * numOfElements),
+                list.get(j).moveAlongXAxis(-xRate * numOfElements));
 
         Collections.swap(list, i, j);
 

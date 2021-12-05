@@ -14,7 +14,6 @@ public class SelectionSort extends Sort {
 
     private void selectionSort(List<Element> list) {
         Color minColor = Color.GREEN;
-        
 
         for (int i = 0; i < list.size() - 1; i++) {
             int min_idx = i;
@@ -26,7 +25,7 @@ public class SelectionSort extends Sort {
                 if (list.get(j).getValue() < list.get(min_idx).getValue()) {
                     ParallelTransition pt = new ParallelTransition();
                     pt.getChildren().add(this.changeColor(list.get(min_idx), Element.START));
-                    
+
                     min_idx = j;
 
                     pt.getChildren().add(this.changeColor(list.get(min_idx), minColor));
@@ -42,7 +41,7 @@ public class SelectionSort extends Sort {
             this.transitions.add(this.changeColor(list.get(i), Element.SORTED));
 
         }
-        
+
         this.transitions.add(this.changeColor(list.get(list.size() - 1), Element.SORTED));
     }
 

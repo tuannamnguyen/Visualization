@@ -10,13 +10,13 @@ public class Main extends Application {
     public static final int APP_HEIGHT = 720;
     public static final int XGAP = 10;
     public static final int BUTTONROW_BOUNDARY = 80;
-    public static int NO_OF_ELEMENTS = 30; 
+    public static int NO_OF_ELEMENTS = 30;
 
     @Override
     public void start(Stage primaryStage) {
         BorderPane root = new BorderPane();
         RootController.rootController(root);
-        
+
         Scene scene = new Scene(root, APP_WIDTH, APP_HEIGHT);
 
         primaryStage.setScene(scene);

@@ -24,8 +24,6 @@ public class InsertionSort extends Sort {
 
             transitions.add(key.moveAlongYAxis(Collections.max(list).getValue() + 350));
 
-            
-
             while (j >= 0 && key.getValue() < list.get(j).getValue()) {
                 transitions.add(list.get(j).moveAlongXAxis(xRate));
                 list.set(j + 1, list.get(j));
@@ -37,7 +35,7 @@ public class InsertionSort extends Sort {
             transitions.add(key.moveAlongXAxis(xRate * (j + 1 - i)));
             transitions.add(key.moveAlongYAxis(-(Collections.max(list).getValue() + 350)));
             transitions.add(changeColor(key, Element.SORTED));
-            
+
         }
     }
 

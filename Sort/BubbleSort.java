@@ -44,7 +44,7 @@ public class BubbleSort extends Sort {
             pt2.getChildren().add(this.changeColor(e, Element.SORTED));
         }
         transitions.add(pt2);
-        
+
     }
 
     @Override
