@@ -1,6 +1,6 @@
 # Visualization
 
-- Chương trình minh họa 3 thuật toán sắp xếp nổi bọt, chèn và lựa chọn sử dụng JavaFX 17.0.1 [theo hướng dẫn dưới đây](https://openjfx.io/openjfx-docs/)
+- Chương trình minh họa 3 thuật toán sắp xếp nổi bọt, chèn và lựa chọn sử dụng JavaFX 17.0.1 [(cài đặt theo hướng dẫn dưới đây)](https://openjfx.io/openjfx-docs/)
   - Đối với VSCode thì làm theo các bước sau:
     1. Tải javafx [tại đây](https://gluonhq.com/products/javafx/) và giải nén.
     2. Tạo 1 project java mới và clone repo này vào thư mục src.
