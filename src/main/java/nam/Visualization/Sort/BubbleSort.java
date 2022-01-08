@@ -1,10 +1,10 @@
-package Visualization.Sort;
+package nam.Visualization.Sort;
 
 import java.util.List;
 
-import Visualization.Element;
 import javafx.animation.ParallelTransition;
 import javafx.animation.Transition;
+import nam.Visualization.Element;
 
 public class BubbleSort extends Sort {
     public BubbleSort() {

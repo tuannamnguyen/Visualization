@@ -1,12 +1,8 @@
-package Visualization;
+package nam.Visualization;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import Visualization.Sort.BubbleSort;
-import Visualization.Sort.InsertionSort;
-import Visualization.Sort.SelectionSort;
-import Visualization.Sort.Sort;
 import javafx.animation.SequentialTransition;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -19,6 +15,10 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import nam.Visualization.Sort.BubbleSort;
+import nam.Visualization.Sort.InsertionSort;
+import nam.Visualization.Sort.SelectionSort;
+import nam.Visualization.Sort.Sort;
 
 public class RootController {
     public static void rootController(BorderPane root) {

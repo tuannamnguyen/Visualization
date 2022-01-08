@@ -1,11 +1,11 @@
-package Visualization.Sort;
+package nam.Visualization.Sort;
 
 import java.util.List;
 
-import Visualization.Element;
 import javafx.animation.ParallelTransition;
 import javafx.animation.Transition;
 import javafx.scene.paint.Color;
+import nam.Visualization.Element;
 
 public class SelectionSort extends Sort {
     public SelectionSort() {

@@ -1,11 +1,11 @@
-package Visualization.Sort;
+package nam.Visualization.Sort;
 
 import java.util.Collections;
 import java.util.List;
 
-import Visualization.Element;
-import Visualization.Main;
 import javafx.animation.Transition;
+import nam.Visualization.Element;
+import nam.Visualization.Main;
 
 public class InsertionSort extends Sort {
     public InsertionSort() {

@@ -1,16 +1,16 @@
-package Visualization.Sort;
+package nam.Visualization.Sort;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import Visualization.Element;
-import Visualization.Main;
 import javafx.animation.FillTransition;
 import javafx.animation.ParallelTransition;
 import javafx.animation.Transition;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
+import nam.Visualization.Element;
+import nam.Visualization.Main;
 
 public abstract class Sort {
     protected List<Transition> transitions;

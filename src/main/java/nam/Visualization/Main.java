@@ -1,4 +1,4 @@
-package Visualization;
+package nam.Visualization;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
